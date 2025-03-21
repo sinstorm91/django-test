@@ -1,0 +1,5 @@
+Django
+pydevd_pycharm
+pytest
+pytest-django
+pytest-xdist
