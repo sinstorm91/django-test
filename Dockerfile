@@ -2,8 +2,7 @@
 FROM python:3.11
 
 # Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    DJANGO_DEBUG=True
+ENV PYTHONUNBUFFERED=1
 
 # Install uv (Fast Package Installer)
 RUN pip install --upgrade pip && pip install uv
@@ -18,7 +17,7 @@ COPY . /app/
 RUN uv pip install --system -r requirements.txt
 
 # Expose necessary ports
-EXPOSE 8000 5678
+EXPOSE 8000
 
 # Start the application with debugging enabled
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
